@@ -6,6 +6,7 @@ const cors = require("cors");
 const serverPort = process.env.PORT;
 const gmailAddress = process.env.GMAIL
 const appPassword= process.env.GMAIL_PASS
+const serverUrl = process.env.PRODUCTION_URL
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -40,4 +41,4 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log(`Server is runining on http://localhost:${serverPort}`));
+app.listen(3000, () => console.log(`Server is currently running on ${serverUrl}`));
